@@ -5,16 +5,3 @@ export const HOUSE_IMAGES = {
   Hufflepuff: "https://1000logos.net/wp-content/uploads/2023/08/Hufflepuff-Logo.png"
 };
 
-export const HOUSE_TRANSLATIONS = {
-  Gryffindor: "Grifinória",
-  Slytherin: "Sonserina",
-  Ravenclaw: "Corvinal",
-  Hufflepuff: "Lufa-Lufa"
-};
-
-export const HOUSE_IDS = {
-  Gryffindor: "0367baf3-1cb6-4baf-bede-48e17e1cd005",
-  Ravenclaw: "805fd37a-65ae-4fe5-b336-d767b8b7c73a",
-  Hufflepuff: "85af6295-fd01-4170-a10b-963dd51dce14",
-  Slytherin: "a9704c47-f92e-40a4-8771-ed1899c9b9c1"
-}

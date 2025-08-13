@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { HOUSE_IMAGES, HOUSE_TRANSLATIONS } from "../assets/houses";
+import { HOUSE_IMAGES } from "../assets/houses";
 import Loading from "../components/Loading";
 import HeadAvatar from "../components/HeadAvatar";
 import * as amplitude from '@amplitude/analytics-browser';
@@ -43,7 +43,7 @@ export default function HouseDetail() {
         <Link to="/" className="text-blue-600 hover:underline">&larr; Voltar</Link>
         <div className="flex flex-col items-center" onLoad={ () =>handleClick(house)}>
           <img src={HOUSE_IMAGES[house.name]} alt={house.name} className="w-32 my-4" />
-          <h1 className="text-3xl font-bold mb-2">{HOUSE_TRANSLATIONS[house.name] || house.name}</h1>
+          <h1 className="text-3xl font-bold mb-2">{ house.name}</h1>
           <div className="text-gray-700 space-y-1 mb-6">
             <div><b>Cores:</b> {house.houseColours}</div>
             <div><b>Animal:</b> {house.animal}</div>
