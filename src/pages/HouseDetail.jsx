@@ -11,7 +11,7 @@ export default function HouseDetail() {
   const [loading, setLoading] = useState(true);
   function handleClick(e){
       try {
-        amplitude.track('Viewed House details', {
+        amplitude.track('Viewed '+ e.name + ' House details', {
           houseName:e.name,
           houseColors:e.houseColours,
           timestamp: new Date().toISOString(),
@@ -24,7 +24,6 @@ export default function HouseDetail() {
        
       }
     };
-
   useEffect(() => {
     fetch(`https://wizard-world-api.herokuapp.com/Houses/${id}`)
       .then(res => res.json())
@@ -33,10 +32,8 @@ export default function HouseDetail() {
         setLoading(false);
       });
   }, [id]);
-
   if (loading) return <Loading />;
   if (!house) return <div className="text-center mt-10">Casa não encontrada.</div>;
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-blue-100 flex flex-col items-center">
       <div className="max-w-2xl w-full bg-white/80 rounded-2xl shadow-lg p-8 mt-8 mb-8">

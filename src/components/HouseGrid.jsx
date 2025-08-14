@@ -10,13 +10,12 @@ import * as amplitude from '@amplitude/analytics-browser';
 
 
 export default function HouseGrid() {
-
 const [house, setHouse] = useState(null);  
 const [loading, setLoading] = useState(true);
 
 function handleClick(e){
     try {
-      amplitude.track('House Crest Clicked', {
+      amplitude.track(e+' House Crest Clicked', {
         houseName:e,
         timestamp: new Date().toISOString(),
         screenWidth: window.innerWidth,
@@ -28,7 +27,6 @@ function handleClick(e){
      
     }
   };
-
   useEffect(() => {
     fetch(`https://wizard-world-api.herokuapp.com/Houses/`)
       .then(res => res.json())
@@ -56,7 +54,7 @@ function handleClick(e){
             <img
               src={HOUSE_IMAGES[houseKey.name]}
               alt={houseKey.name}
-              className="w-32 h-32 object-contain drop-shadow-xl"
+              className="w-25 h-24 object-fit drop-shadow-xl"
               loading="lazy"
              
             />
